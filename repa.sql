@@ -1,0 +1,506 @@
+-- phpMyAdmin SQL Dump
+-- version 4.2.7.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: May 13, 2017 at 11:16 AM
+-- Server version: 5.6.20
+-- PHP Version: 5.5.15
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `repa`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ayat`
+--
+
+CREATE TABLE IF NOT EXISTS `ayat` (
+  `no` int(11) NOT NULL DEFAULT '0',
+  `id_surat` tinyint(3) NOT NULL,
+  `no_ayat` varchar(15) NOT NULL,
+  `bunyi` text CHARACTER SET utf8 NOT NULL,
+  `transliterasi` text CHARACTER SET utf8 NOT NULL,
+  `arti` text NOT NULL,
+  `repetisi` int(11) NOT NULL,
+  `juz` tinyint(4) NOT NULL,
+  `id_tempat` tinyint(2) NOT NULL,
+  `no_turun` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ayat`
+--
+
+INSERT INTO `ayat` (`no`, `id_surat`, `no_ayat`, `bunyi`, `transliterasi`, `arti`, `repetisi`, `juz`, `id_tempat`, `no_turun`) VALUES
+(1, 24, '24.005', 'إلا الذين تابوا من بعد ذلك وأصلحوا فإن الله غفور رحيم', 'Illaa alladziina taabuu min ba''di dzaalika wa-ashlahuu fa-inna Allaaha ghafuurun rahiim(un)', '5. kecuali orang-orang yang bertaubat sesudah itu dan memperbaiki (dirinya), maka sesungguhnya Allah Maha Pengampun lagi Maha Penyayang.', 2, 18, 2, '102.024.005'),
+(2, 31, '31.004', 'الذين يقيمون الصلاة ويؤتون الزكاة وهم بالآخرة هم يوقنون', 'Alladziina yuqiimuuna a(l)sh-shalaata wayu''tuuna a(l)zzakaata wahum bi(a)l-aakhirati hum yuuqinuun(a)', '4. (yaitu) orang-orang yang mendirikan shalat, menunaikan zakat dan mereka yakin akan adanya negeri akhirat.', 2, 21, 1, '057.031.004'),
+(3, 52, '52.040', 'أم تسألهم أجرا فهم من مغرم مثقلون', 'Am tas-aluhum ajran fahum min maghramin mutsqaluun(a)', '40. Ataukah kamu meminta upah kepada mereka sehingga mereka dibebani dengan hutang?', 2, 27, 1, '076.052.040'),
+(4, 52, '52.025', 'وأقبل بعضهم على بعض يتساءلون', 'Wa-aqbala ba''dhuhum ''alaa ba''dhin yatasaa''aluun(a)', '25. Dan sebahagian mereka menghadap kepada sebahagian yang lain saling tanya-menanya.', 2, 27, 1, '076.052.025'),
+(5, 52, '52.019', 'كلوا واشربوا هنيئا بما كنتم تعملون', 'Kuluu wa(i)syrabuu hanii-an bimaa kuntum ta''maluun(a)', '19. (Dikatakan kepada mereka): "Makan dan minumlah dengan enak sebagai balasan dari apa yang telah kamu kerjakan",', 2, 27, 1, '076.052.019'),
+(6, 51, '51.032', 'قالوا إنا أرسلنا إلى قوم مجرمين', 'Qaaluu innaa ursilnaa ilaa qawmin mujrimiin(a)', '32. Mereka menjawab: "Sesungguhnya kami diutus kepada kaum yang berdosa (kaum Luth),', 2, 26, 1, '067.051.032'),
+(7, 51, '51.031', 'قال فما خطبكم أيها المرسلون', 'Qaala famaa khathbukum ayyuhaa almursaluun(a', '31. Ibrahim bertanya: "Apakah urusanmu hai para utusan?"', 2, 26, 1, '067.051.031'),
+(8, 51, '51.015', 'إن المتقين في جنات وعيون', 'Inna almuttaqiina fii jannaatin wa''uyuun(in)', '15. Sesungguhnya orang-orang yang bertaqwa itu berada dalam taman-taman (syurga) dan mata air-mata air,', 2, 26, 1, '067.051.015'),
+(9, 23, '23.026', 'قال رب انصرني بما كذبون', 'Qaala rabbi unshurnii bimaa kadz-dzabuun(i)', '26. Nuh berdo''a: "Ya Tuhanku, tolonglah aku [997], karena mereka mendustakan aku."', 2, 18, 1, '074.023.026'),
+(10, 23, '23.043', 'ما تسبق من أمة أجلها وما يستأخرون', 'Maa tasbiqu min ummatin ajalahaa wamaa yasta''khiruun(a)', '43. Tidak (dapat) sesuatu umatpun mendahului ajalnya, dan tidak (dapat pula) mereka terlambat (dari ajalnya itu).', 2, 18, 1, '074.023.043'),
+(11, 23, '23.008', 'والذين هم لأماناتهم وعهدهم راعون', 'Wa(a)lladziina hum li-amaanaatihim wa''ahdihim raa''uun(a)', '8. Dan orang-orang yang memelihara amanat-amanat (yang dipikulnya) dan janjinya.', 2, 18, 1, '074.023.008'),
+(12, 25, '25.009', 'انظر كيف ضربوا لك الأمثال فضلوا فلا يستطيعون سبيلا', 'unzhur kayfa dharabuu laka al-amtsaala fadhalluu falaa yastathii''uuna sabiilaa(n)', '9. Perhatikanlah, bagaimana mereka membuat perbandingan-perbandingan tentang kamu, lalu sesatlah mereka, mereka tidak sanggup (mendapatkan) jalan (untuk menentang kerasulanmu).', 2, 18, 1, '042.025.009'),
+(13, 25, '25.009', 'في جنات وعيون', 'Fii jannaatin wa''uyuun(in)', '52. (yaitu) di dalam taman-taman dan mata-air-mata-air;', 2, 18, 1, '064.044.052'),
+(14, 44, '44.002', 'والكتاب المبين', 'Wa(a)lkitaabi almubiin(i)', '2. Demi Kitab (Al Qur ''an) yang menjelaskan,', 2, 25, 1, '064.044.002'),
+(15, 26, '26.001', 'طسم', 'thaa-siin-miim', '1. Thaa Siin Miim', 2, 19, 1, '047.026.001'),
+(16, 43, '43.083', 'فذرهم يخوضوا ويلعبوا حتى يلاقوا يومهم الذي يوعدون', 'Fadzarhum yakhuudhuu wayal''abuu hattaa yulaaquu yawmahumu alladzii yuu''aduun(a)', '83. Maka biarlah mereka tenggelam (dalam kesesatan) dan bermain-main sampai mereka menemui hari yang dijanjikan kepada mereka.', 2, 25, 1, '063.043.083'),
+(17, 43, '43.002', 'والكتاب المبين', 'Wa(a)lkitaabi almubiin(i)', '2. Demi Kitab (Al Qur ''an) yang menerangkan.', 2, 25, 1, '063.043.002'),
+(18, 26, '26.002', 'تلك آيات الكتاب المبين', 'Tilka aayaatu alkitaabi almubiin(i)', '2. Inilah ayat-ayat Al Qur ''an yang menerangkan.', 2, 19, 1, '047.026.002'),
+(19, 26, '26.032', 'فألقى عصاه فإذا هي ثعبان مبين', 'Fa-alqaa ''ashaahu fa-idzaa hiya tsu''baanun mubiin(un)', '32. Maka Musa melemparkan tongkatnya, lalu tiba-tiba tongkat itu (menjadi) ular yang nyata.', 2, 19, 1, '047.026.032'),
+(20, 23, '23.039', 'قال رب انصرني بما كذبون', 'Qaala rabbi unshurnii bimaa kadz-dzabuun(i)', '39. Rasul itu berdo''a: "Ya Tuhanku, tolonglah aku karena mereka mendustakanku."', 2, 18, 1, '074.023.039'),
+(21, 16, '16.055', 'ليكفروا بما آتيناهم فتمتعوا فسوف تعلمون', 'Liyakfuruu bimaa aataynaahum fatamatta''uu fasawfa ta''lamuun(a)', '55. Biarlah mereka mengingkari ni ''mat yang telah Kami berikan kepada mereka; maka bersenang-senanglah kamu. Kelak kamu akan mengetahui (akibatnya).', 2, 14, 1, '070.016.055'),
+(22, 15, '15.034', 'قال فاخرج منها فإنك رجيم', 'Qaala fa(u)khruj minhaa fa-innaka rajiim(un)', '34. Allah berfirman: "Keluarlah dari surga, karena sesungguhnya kamu terkutuk,', 2, 13, 1, '054.015.034'),
+(23, 15, '15.036', 'قال رب فأنظرني إلى يوم يبعثون', 'Qaala rabbi fa-anzhirnii ilaa yawmi yub''atsuun(a)', '36. Berkata iblis: "Ya Tuhanku, (kalau begitu) maka beri tangguhlah kepadaku sampai hari (manusia) dibangkitkan [797],', 2, 13, 1, '054.015.036'),
+(24, 15, '15.037', 'قال فإنك من المنظرين', 'Qaala fa-innaka mina almunzhariin(a)', '37. Allah berfirman: "(Kalau begitu) maka sesungguhnya kamu termasuk orang-orang yang diberi tangguh,', 2, 13, 1, '054.015.037'),
+(25, 15, '15.038', 'إلى يوم الوقت المعلوم', 'Ilaa yawmi alwaqti alma''luum(i)', '38. sampai hari (suatu) waktu yang telah ditentukan [798],', 2, 13, 1, '054.015.038'),
+(26, 15, '15.040', 'إلا عبادك منهم المخلصين', 'Illaa ''ibaadaka minhumu almukhlashiin(a)', '40. kecuali hamba-hamba Engkau yang mukhlis [799] diantara mereka".  [799]. Yang dimaksud dengan "mukhlis" ialah orang-orang yang telah diberi taufiq untuk mentaati segala petunjuk dan perintah Allah s.w.t.', 2, 13, 1, '054.015.040'),
+(27, 15, '15.045', 'إن المتقين في جنات وعيون', 'Inna almuttaqiina fii jannaatin wa''uyuun(in)', '45. Sesungguhnya orang-orang yang bertakwa itu berada dalam surga (taman-taman) dan (di dekat) mata air-mata air (yang mengalir).', 2, 13, 1, '054.015.045'),
+(28, 15, '15.057', 'قال فما خطبكم أيها المرسلون', 'Qaala famaa khathbukum ayyuhaa almursaluun(a)', '57. Berkata (pula) Ibrahim: "Apakah urusanmu yang penting (selain itu), hai para utusan?"', 2, 13, 1, '054.015.057'),
+(29, 52, '52.041', 'أم عندهم الغيب فهم يكتبون', 'Am ''indahumu alghaybu fahum yaktubuun(a)', '41. Apakah ada pada sisi mereka pengetahuan tentang yang gaib lalu mereka menuliskannya?', 2, 27, 1, '076.052.041'),
+(30, 16, '16.042', 'الذين صبروا وعلى ربهم يتوكلون', 'Alladziina shabaruu wa''alaa rabbihim yatawakkaluun(a)', '42. (yaitu) orang-orang yang sabar dan hanya kepada Tuhan saja mereka bertawakkal.', 2, 14, 1, '070.016.042'),
+(31, 40, '40.023', 'ولقد أرسلنا موسى بآياتنا وسلطان مبين', 'Walaqad arsalnaa muusaa bi-aayaatinaa wasulthaanin mubiin(in)', '23. Dan sesungguhnya telah Kami utus Musa dengan membawa Ayat-ayat Kami dan keterangan yang nyata,', 2, 24, 1, '060.040.023'),
+(32, 17, '17.048', 'انظر كيف ضربوا لك الأمثال فضلوا فلا يستطيعون سبيلا', 'unzhur kayfa dharabuu laka al-amtsaala fadhalluu falaa yastathii''uuna sabiilaa(n)', '48. Lihatlah bagaimana mereka membuat perumpamaan-perumpamaan terhadapmu; karena itu mereka menjadi sesat dan tidak dapat lagi menemukan jalan (yang benar).', 2, 15, 1, '050.017.048'),
+(33, 18, '18.089', 'ثم أتبع سببا', 'Tsumma atba''a sababaa(n)', '89. Kemudian dia menempuh jalan (yang lain).', 2, 15, 1, '069.018.089'),
+(34, 18, '18.092', 'ثم أتبع سببا', 'Tsumma atba''a sababaa(n)', '92. Kemudian dia menempuh suatu jalan (yang lain lagi).', 2, 15, 1, '069.018.092'),
+(35, 20, '20.024', 'اذهب إلى فرعون إنه طغى', 'Idzhab ilaa fir''awna innahu thaghaa', '24. Pergilah kepada Fir ''aun; sesungguhnya ia telah melampaui batas".', 2, 16, 1, '045.020.024'),
+(36, 21, '21.041', 'ولقد استهزئ برسل من قبلك فحاق بالذين سخروا منهم ما كانوا به يستهزئون', 'Walaqadi istuhzi-a birusulin min qablika fahaaqa bi(a)lladziina sakhiruu minhum maa kaanuu bihi yastahzi-uun(a)', '41. Dan sungguh telah diperolok-olokkan beberapa orang rasul sebelum kamu maka turunlah kepada orang yang mencemoohkan rasul-rasul itu azab yang selalu mereka perolok-olokkan.', 2, 17, 1, '073.021.041'),
+(37, 23, '23.005', 'والذين هم لفروجهم حافظون', 'Wa(a)lladziina hum lifuruujihim haafizhuun(a)', '5. dan orang-orang yang menjaga kemaluannya,', 2, 18, 1, '074.023.005'),
+(38, 23, '23.006', 'إلا على أزواجهم أو ما ملكت أيمانهم فإنهم غير ملومين', 'Illaa ''alaa azwaajihim aw maa malakat aymaanuhum fa-innahum ghayru maluumiin(a)', '6. kecuali terhadap isteri-isteri mereka atau budak yang mereka miliki [995]; maka sesungguhnya mereka dalam hal ini tiada terceIa. [995]. Maksudnya: budak-budak belian yang didapat dalam peperangan dengan orang kafir, bukan budak belian yang didapat di luar peperangan. Dalam peperangan dengan orang-orang kafir itu, wanita-wanita yang ditawan biasanya dibagi-bagikan kepada kaum Muslimin yang ikut dalam peperangan itu, dan kebiasan ini bukanlah suatu yang diwajibkan. Imam boleh melarang kebiasaan ini lihat selanjutnya not. 282.', 2, 18, 1, '074.023.006'),
+(39, 23, '23.007', 'فمن ابتغى وراء ذلك فأولئك هم العادون', 'Famani ibtaghaa waraa''a dzaalika faulaa-ika humu al''aaduun(a)', '7. Barangsiapa mencari yang di balik itu [996] maka mereka itulah orang-orang yang melampaui batas.  [996]. Maksudnya: zina, homosexueel, dan sebagainya.', 2, 18, 1, '074.023.007'),
+(40, 15, '15.058', 'قالوا إنا أرسلنا إلى قوم مجرمين', 'Qaaluu innaa ursilnaa ilaa qawmin mujrimiin(a)', '58. Mereka menjawab: "Kami sesungguhnya diutus kepada kaum yang berdosa,', 2, 13, 1, '054.015.058'),
+(41, 28, '28.074', 'ويوم يناديهم فيقول أين شركائي الذين كنتم تزعمون', 'Wayawma yunaadiihim fayaquulu ayna syurakaa-iya alladziina kuntum taz''umuun(a)', '74. Dan (ingatlah) hari (di waktu) Allah menyeru mereka, seraya berkata: "Di manakah sekutu-sekutu-Ku yang dahulu kamu katakan?"', 2, 20, 1, '049.028.074'),
+(42, 26, '26.172', 'ثم دمرنا الآخرين', 'Tsumma dammarnaa al-aakhariin(a)', '172. Kemudian Kami binasakan yang lain.', 2, 19, 1, '047.026.172'),
+(43, 26, '26.173', 'وأمطرنا عليهم مطرا فساء مطر المنذرين', 'Wa-amtharnaa ''alayhim matharan fasaa''a matharu almundzariin(a)', '173. Dan Kami hujani mereka dengan hujan (batu) maka amat jeleklah hujan yang menimpa orang-orang yang telah diberi peringatan itu.', 2, 19, 1, '047.026.173'),
+(44, 26, '26.185', 'قالوا إنما أنت من المسحرين', 'Qaaluu innamaa anta mina almusah-hariin(a)', '185. Mereka berkata: "Sesungguhnya kamu adalah salah seorang dari orang-orang yang kena sihir,', 2, 19, 1, '047.026.185'),
+(45, 37, '37.082', 'ثم أغرقنا الآخرين', 'Tsumma aghraqnaa al-aakhariin(a)', '82. Kemudian Kami tenggelamkan orang-orang yang lain.', 2, 23, 1, '056.037.082'),
+(46, 26, '26.204', 'أفبعذابنا يستعجلون', 'Afabi''adzaabinaa yasta''jiluun(a)', '204. Maka apakah mereka meminta supaya disegerakan azab Kami?', 2, 19, 1, '047.026.204'),
+(47, 27, '27.003', 'الذين يقيمون الصلاة ويؤتون الزكاة وهم بالآخرة هم يوقنون', 'Alladziina yuqiimuuna a(l)sh-shalaata wayu''tuuna a(l)zzakaata wahum bi(a)l-aakhirati hum yuuqinuun(a)', '3. (yaitu) orang-orang yang mendirikan sembahyang dan menunaikan zakat dan mereka yakin akan adanya negeri akhirat.', 2, 19, 1, '048.027.003'),
+(48, 27, '27.058', 'وأمطرنا عليهم مطرا فساء مطر المنذرين', 'Wa-amtharnaa ''alayhim matharan fasaa''a matharu almundzariin(a)', '58. Dan Kami turunkan hujan atas mereka (hujan batu), maka amat buruklah hujan yang ditimpakan atas orang-orang yang diberi peringatan itu.', 2, 19, 1, '048.027.058'),
+(49, 41, '41.045', 'ولقد آتينا موسى الكتاب فاختلف فيه ولولا كلمة سبقت من ربك لقضي بينهم وإنهم لفي شك منه مريب', 'Walaqad aataynaa muusaa alkitaaba fa(i)khtulifa fiihi walawlaa kalimatun sabaqat min rabbika laqudhiya baynahum wa-innahum lafii syakkin minhu muriib(in)', '45. Dan sesungguhnya telah Kami berikan kepada Musa Taurat lalu diperselisihkan tentang Taurat itu. Kalau tidak ada keputusan yang telah terdahulu dari Rabb-mu, tentulah orang-orang kafir itu sudah dibinasakan. Dan Sesungguhnya mereka terhadap Al Qur''an benar-benar dalam keragu-raguan yang membingungkan.', 2, 24, 1, '061.041.045'),
+(50, 37, '37.043', 'في جنات النعيم', 'Fii jannaati a(l)nna''iim(i)', '43. di dalam syurga-syurga yang penuh ni ''mat.', 2, 23, 1, '056.037.043'),
+(51, 26, '26.147', 'في جنات وعيون', 'Fii jannaatin wa''uyuun(in)', '147. di dalam kebun-kebun serta mata air,', 2, 19, 1, '047.026.147'),
+(52, 37, '37.027', 'وأقبل بعضهم على بعض يتساءلون', 'Wa-aqbala ba''dhuhum ''alaa ba''dhin yatasaa''aluun(a)', '27. Sebahagian dan mereka menghadap kepada sebahagian yang lain berbantah-bantahan.', 2, 23, 1, '056.037.027'),
+(53, 37, '37.017', 'أو آباؤنا الأولون', 'Awa aabaaunaa al-awwaluun(a)', '17. Dan apakah bapak-bapak kami yang telah terdahulu (akan dibangkitkan pula)"?', 2, 23, 1, '056.037.017'),
+(54, 29, '29.059', 'الذين صبروا وعلى ربهم يتوكلون', 'Alladziina shabaruu wa''alaa rabbihim yatawakkaluun(a)', '59. (yaitu) yang bersabar dan bertawakkal kepada Tuhannya.', 2, 20, 1, '085.029.059'),
+(55, 36, '36.046', 'وما تأتيهم من آية من آيات ربهم إلا كانوا عنها معرضين', 'Wamaa ta''tiihim min aayatin min aayaati rabbihim illaa kaanuu ''anhaa mu''ridhiin(a)', '46. Dan sekali-kali tiada datang kepada mereka suatu tanda dari tanda tanda kekuasaan Tuhan mereka, melainkan mereka selalu berpaling daripadanya.', 2, 22, 1, '041.036.046'),
+(56, 35, '35.017', 'وما ذلك على الله بعزيز', 'Wamaa dzaalika ''alaa Allaahi bi''aziiz(in)', '17. Dan yang demikian itu sekali-kali tidak sulit bagi Allah.', 2, 22, 1, '043.035.017'),
+(57, 30, '30.034', 'ليكفروا بما آتيناهم فتمتعوا فسوف تعلمون', 'Liyakfuruu bimaa aataynaahum fatamatta''uu fasawfa ta''lamuun(a)', '34. sehingga mereka mengingkari akan rahmat yang telah Kami berikan kepada mereka. Maka bersenang-senanglah kamu sekalian, kelak kamu akan mengetahui (akibat perbuatanmu).', 2, 21, 1, '084.030.034'),
+(58, 30, '30.053', 'وما أنت بهاد العمي عن ضلالتهم إن تسمع إلا من يؤمن بآياتنا فهم مسلمون', 'Wamaa anta bihaadi al''umyi ''an dhalaalatihim in tusmi''u illaa man yu''minu bi-aayaatinaa fahum muslimuun(a)', '53. Dan kamu sekali-kali tidak akan dapat memberi petunjuk kepada orang-orang yang buta (mata hatinya) dari kesesatannya. Dan kamu tidak dapat memperdengarkan (petunjuk Tuhan) melainkan kepada orang-orang yang beriman dengan ayat-ayat Kami, mereka itulah orang-orang yang berserah diri (kepada Kami).', 2, 21, 1, '084.030.053'),
+(59, 31, '31.005', 'أولئك على هدى من ربهم وأولئك هم المفلحون', 'ulaa-ika ''alaa hudan min rabbihim waulaa-ika humu almuflihuun(a)', '5. Mereka itulah orang-orang yang tetap mendapat petunjuk dari Tuhannya dan mereka itulah orang-orang yang beruntung.', 2, 21, 1, '057.031.005'),
+(60, 28, '28.062', 'ويوم يناديهم فيقول أين شركائي الذين كنتم تزعمون', 'Wayawma yunaadiihim fayaquulu ayna syurakaa-iya alladziina kuntum taz''umuun(a)', '62. Dan (ingatlah) hari (di waktu) Allah menyeru mereka, seraya berkata: "Di manakah sekutu-sekutu-Ku yang dahulu kamu katakan?"', 2, 20, 1, '049.028.062'),
+(61, 38, '38.073', 'فسجد الملائكة كلهم أجمعون', 'Fasajada almalaa-ikatu kulluhum ajma''uun(a)', '73. Lalu seluruh malaikat-malaikat itu bersujud semuanya,', 2, 23, 1, '038.038.073'),
+(62, 15, '15.005', 'ما تسبق من أمة أجلها وما يستأخرون', 'Maa tasbiqu min ummatin ajalahaa wamaa yasta''khiruun(a)', '5. Tidak ada suatu umatpun yang dapat mendahului ajalnya, dan tidak (pula) dapat mengundurkan (nya).', 2, 13, 1, '054.015.005'),
+(63, 26, '26.047', 'قالوا آمنا برب العالمين', 'Qaaluu aamannaa birabbi al''aalamiin(a)', '47. mereka berkata: "Kami beriman kepada Tuhan semesta alam,', 2, 19, 1, '047.026.047'),
+(64, 39, '39.013', 'قل إني أخاف إن عصيت ربي عذاب يوم عظيم', 'Qul innii akhaafu in ''ashaytu rabbii ''adzaaba yawmin ''azhiim(in)', '13. Katakanlah: "Sesungguhnya aku takut akan siksaan hari yang besar jika aku durhaka kepada Tuhanku".', 2, 23, 1, '059.039.013'),
+(65, 26, '26.048', 'رب موسى وهارون', 'Rabbi muusaa wahaaruun(a)', '48. (yaitu) Tuhan Musa dan Harun".', 2, 19, 1, '047.026.048'),
+(66, 38, '38.087', 'إن هو إلا ذكر للعالمين', 'In huwa illaa dzikrun lil''aalamiin(a)', '87. Al Qur ''an ini tidak lain hanyalah peringatan bagi semesta alam.', 2, 23, 1, '038.038.087'),
+(67, 38, '38.083', 'إلا عبادك منهم المخلصين', 'Illaa ''ibaadaka minhumu almukhlashiin(a)', '83. kecuali hamba-hamba-Mu yang mukhlis di antara mereka [1305]. [1305] Lihat not 799.', 2, 23, 1, '038.038.083'),
+(68, 38, '38.081', 'إلى يوم الوقت المعلوم', 'Ilaa yawmi alwaqti alma''luum(i)', '81. sampai kepada hari yang telah ditentukan waktunya (hari Kiamat)".', 2, 23, 1, '038.038.081'),
+(69, 38, '38.080', 'قال فإنك من المنظرين', 'Qaala fa-innaka mina almunzhariin(a)', '80. Allah berfirman: "Sesungguhnya kamu termasuk orang-orang yang diberi tangguh,', 2, 23, 1, '038.038.080'),
+(70, 26, '26.171', 'إلا عجوزا في الغابرين', 'Illaa ''ajuuzan fii alghaabiriin(a)', '171. kecuali seorang perempuan tua (isterinya), yang termasuk dalam golongan yang tinggal.', 2, 19, 1, '047.026.171'),
+(71, 38, '38.077', 'قال فاخرج منها فإنك رجيم', 'Qaala fa(u)khruj minhaa fa-innaka rajiim(un)', '77. Allah berfirman: "Maka keluarlah kamu dari surga; sesungguhnya kamu adalah orang yang terkutuk,', 2, 23, 1, '038.038.077'),
+(72, 26, '26.153', 'قالوا إنما أنت من المسحرين', 'Qaaluu innamaa anta mina almusah-hariin(a)', '153. Mereka berkata: "Sesungguhnya kamu adalah salah seorang dari orang-orang yang kena sihir;', 2, 19, 1, '047.026.153'),
+(73, 38, '38.072', 'فإذا سويته ونفخت فيه من روحي فقعوا له ساجدين', 'Fa-idzaa sawwaytuhu wanafakhtu fiihi min ruuhii faqa''uu lahu saajidiin(a)', '72. Maka apabila telah Kusempurnakan kejadiannya dan Kutiupkan kepadanya roh (ciptaan)Ku; maka hendaklah kamu tersungkur dengan bersujud kepadanya".', 2, 23, 1, '038.038.072'),
+(74, 37, '37.176', 'أفبعذابنا يستعجلون', 'Afabi''adzaabinaa yasta''jiluun(a)', '176. Maka apakah mereka meminta supaya siksa Kami disegerakan?', 2, 23, 1, '056.037.176'),
+(75, 26, '26.066', 'ثم أغرقنا الآخرين', 'Tsumma aghraqnaa al-aakhariin(a)', '66. Dan Kami tenggelamkan golongan yang lain itu.', 2, 19, 1, '047.026.066'),
+(76, 37, '37.154', 'ما لكم كيف تحكمون', 'Maa lakum kayfa tahkumuun(a)', '154. Apakah yang terjadi padamu? Bagaimana (caranya) kamu menetapkan?', 2, 23, 1, '056.037.154'),
+(77, 37, '37.136', 'ثم دمرنا الآخرين', 'Tsumma dammarnaa al-aakhariin(a)', '136. Kemudian Kami binasakan orang-orang yang lain[1288]. [1288] Yang dimaksud dengan "orang-orang yang lain" yaitu mereka yang tinggal di kota yang tidak ikut bersama Luth a.s..', 2, 23, 1, '056.037.136'),
+(78, 37, '37.135', 'إلا عجوزا في الغابرين', 'Illaa ''ajuuzan fii alghaabiriin(a)', '135. kecuali seorang perempuan tua (isterinya yang berada) bersama-sama orang yang tinggal.', 2, 23, 1, '056.037.135'),
+(79, 109, '109.005', 'ولا أنتم عابدون ما أعبد', 'Walaa antum ''aabiduuna maa a''bud(u)', '5. dan kamu tidak pernah (pula) menjadi penyembah Tuhan yang aku sembah.', 2, 30, 1, '018.109.005'),
+(80, 26, '26.033', 'ونزع يده فإذا هي بيضاء للناظرين', 'Wanaza''a yadahu fa-idzaa hiya baydhaau li(l)nnaazhiriin(a)', '33. Dan ia menarik tangannya (dari dalam bajunya), maka tiba-tiba tangan itu jadi putih (bersinar) bagi orang-orang yang melihatnya.', 2, 19, 1, '047.026.033'),
+(81, 38, '38.079', 'قال رب فأنظرني إلى يوم يبعثون', 'Qaala rabbi fa-anzhirnii ilaa yawmi yub''atsuun(a)', '79. Iblis berkata: "Ya Tuhanku, beri tangguhlah aku sampai hari mereka dibangkitkan".', 2, 23, 1, '038.038.079'),
+(82, 27, '27.081', 'وما أنت بهاد العمي عن ضلالتهم إن تسمع إلا من يؤمن بآياتنا فهم مسلمون', 'Wamaa anta bihaadii al''umyi ''an dhalaalatihim in tusmi''u illaa man yu''minu bi-aayaatinaa fahum muslimuun(a)', '81. Dan kamu sekali-kali tidak dapat memimpin (memalingkan) orang-orang buta dari kesesatan mereka. Kamu tidak dapat menjadikan (seorangpun) mendengar, kecuali orang-orang yang beriman kepada ayat-ayat Kami, lalu mereka berserah diri.', 2, 19, 1, '048.027.081'),
+(83, 2, '2.134', 'تلك أمة قد خلت لها ما كسبت ولكم ما كسبتم ولا تسألون عما كانوا يعملون', 'Tilka ummatun qad khalat lahaa maa kasabat walakum maa kasabtum walaa tus-aluuna ''ammaa kaanuu ya''maluun(a)', '134. Itu adalah umat yang lalu; baginya apa yang telah diusahakannya dan bagimu apa yang sudah kamu usahakan, dan kamu tidak akan diminta pertanggungan jawab tentang apa yang telah mereka kerjakan.', 2, 1, 2, '087.002.134'),
+(84, 2, '2.141', 'تلك أمة قد خلت لها ما كسبت ولكم ما كسبتم ولا تسألون عما كانوا يعملون', 'Tilka ummatun qad khalat lahaa maa kasabat walakum maa kasabtum walaa tus-aluuna ''ammaa kaanuu ya''maluun(a)', '141. Itu adalah umat yang telah lalu; baginya apa yang diusahakannya dan bagimu apa yang kamu usahakan; dan kamu tidak akan diminta pertanggungan jawab tentang apa yang telah mereka kerjakan.', 2, 1, 2, '087.002.141'),
+(85, 77, '77.043', 'كلوا واشربوا هنيئا بما كنتم تعملون', 'Kuluu wa(i)syrabuu hanii-an bimaa kuntum ta''maluun(a)', '43. (Dikatakan kepada mereka): "Makan dan minumlah kamu dengan enak karena apa yang telah kamu kerjakan".', 2, 29, 1, '033.077.043'),
+(86, 2, '2.162', 'خالدين فيها لا يخفف عنهم العذاب ولا هم ينظرون', 'Khaalidiina fiihaa laa yukhaffafu ''anhumu al''adzaabu walaa hum yunzharuun(a)', '162. Mereka kekal di dalam la ''nat itu; tidak akan diringankan siksa dari mereka dan tidak (pula) mereka diberi tangguh.', 2, 1, 2, '087.002.162'),
+(87, 3, '3.088', 'خالدين فيها لا يخفف عنهم العذاب ولا هم ينظرون', 'Khaalidiina fiihaa laa yukhaffafu ''anhumu al''adzaabu walaa hum yunzharuun(a)', '88. mereka kekal di dalamnya, tidak diringankan siksa dari mereka, dan tidak (pula) mereka diberi tangguh,', 2, 3, 2, '089.003.088'),
+(88, 3, '3.089', 'إلا الذين تابوا من بعد ذلك وأصلحوا فإن الله غفور رحيم', 'Illaa alladziina taabuu min ba''di dzaalika wa-ashlahuu fa-inna Allaaha ghafuurun rahiim(un)', '89. kecuali orang-orang yang taubat, sesudah (kafir) itu dan mengadakan perbaikan [211]. Karena sesungguhnya Allah Maha Pengampun lagi Maha Penyayang. [211] Mengadakan perbaikan berarti berbuat pekerjaan-pekerjaan yang baik untuk menghilangkan akibat-akibat yang jelek dan kesalahan-kesalahan yang dilakukan.', 2, 3, 2, '089.003.089'),
+(89, 3, '3.182', 'ذلك بما قدمت أيديكم وأن الله ليس بظلام للعبيد', 'dzaalika bimaa qaddamat aydiikum wa-anna Allaaha laysa bizhallaamin lil''abiid(i)', '182. (Azab) yang demikian itu adalah disebabkan perbuatan tanganmu sendiri, dan bahwasanya Allah sekali-kali tidak menganiaya hamba-hamba-Nya.', 2, 3, 2, '089.003.182'),
+(90, 28, '28.001', 'طسم', 'thaa-siin-miim', '1. Thaa Siin Miim', 2, 20, 1, '049.028.001'),
+(91, 5, '5.086', 'والذين كفروا وكذبوا بآياتنا أولئك أصحاب الجحيم', 'Wa(a)lladziina kafaruu wakadz-dzabuu bi-aayaatinaa ulaa-ika ash-haabu aljahiim(i)', '86. Dan orang-orang kafir serta mendustakan ayat-ayat Kami, mereka itulah penghuni neraka.', 2, 6, 2, '112.005.086'),
+(92, 79, '79.017', 'اذهب إلى فرعون إنه طغى', 'Idzhab ilaa fir''awna innahu thaghaa', '17. "Pergilah kamu kepada Fir ''aun, sesungguhnya dia telah melampaui batas,', 2, 30, 1, '081.079.017'),
+(93, 76, '76.029', 'إن هذه تذكرة فمن شاء اتخذ إلى ربه سبيلا', 'Inna haadzihi tadzkiratun faman syaa''a ittakhadza ilaa rabbihi sabiilaa(n)', '29. Sesungguhnya (ayat-ayat) ini adalah suatu peringatan, maka barangsiapa menghendaki (kebaikan bagi dirinya) niscaya dia mengambil jalan kepada Tuhannya.', 2, 29, 2, '098.076.029'),
+(94, 74, '74.055', 'فمن شاء ذكره', 'Faman syaa''a dzakarah(u)', '55. Maka barangsiapa menghendaki, niscaya dia mengambil pelajaran daripadanya (Al Qur''an).', 2, 29, 1, '004.074.055'),
+(95, 73, '73.019', 'إن هذه تذكرة فمن شاء اتخذ إلى ربه سبيلا', 'Inna haadzihi tadzkiratun faman syaa''a ittakhadza ilaa rabbihi sabiilaa(n)', '19. Sesungguhnya ini adalah suatu peringatan. Maka barangsiapa yang menghendaki niscaya ia menempuh jalan (yang menyampaikannya) kepada Tuhannya.', 2, 29, 1, '003.073.019'),
+(96, 70, '70.042', 'فذرهم يخوضوا ويلعبوا حتى يلاقوا يومهم الذي يوعدون', 'Fadzarhum yakhuudhuu wayal''abuu hattaa yulaaquu yawmahumu alladzii yuu''aduun(a)', '42. Maka biarkanlah mereka tenggelam (dalam kebatilan) dan bermain-main sampai mereka menjumpai hari yang diancamkan kepada mereka,', 2, 29, 1, '079.070.042'),
+(97, 70, '70.032', 'والذين هم لأماناتهم وعهدهم راعون', 'Wa(a)lladziina hum li-amaanaatihim wa''ahdihim raa''uun(a)', '32. Dan orang-orang yang memelihara amanat-amanat (yang dipikulnya) dan janjinya.', 2, 29, 1, '079.070.032'),
+(98, 70, '70.031', 'فمن ابتغى وراء ذلك فأولئك هم العادون', 'Famani ibtaghaa waraa''a dzaalika faulaa-ika humu al''aaduun(a)', '31. Barangsiapa mencari yang di balik itu [1514], maka mereka itulah orang-orang yang melampaui batas. [1514] Lihat not [996].', 2, 29, 1, '079.070.031'),
+(99, 70, '70.030', 'إلا على أزواجهم أو ما ملكت أيمانهم فإنهم غير ملومين', 'Illaa ''alaa azwaajihim aw maa malakat aymaanuhum fa-innahum ghayru maluumiin(a)', '30. kecuali terhadap isteri-isteri mereka atau budak-budak yang mereka miliki [1513], maka sesungguhnya mereka dalam hal ini tiada tercela. [1513] Lihat not [995].', 2, 29, 1, '079.070.030'),
+(100, 15, '15.030', 'فسجد الملائكة كلهم أجمعون', 'Fasajada almalaa-ikatu kulluhum ajma''uun(a)', '30. Maka bersujudlah para malaikat itu semuanya bersama-sama,', 2, 13, 1, '054.015.030'),
+(101, 5, '5.010', 'والذين كفروا وكذبوا بآياتنا أولئك أصحاب الجحيم', 'Wa(a)lladziina kafaruu wakadz-dzabuu bi-aayaatinaa ulaa-ika ash-haabu aljahiim(i)', '10. Adapun orang-orang yang kafir dan mendustakan ayat-ayat Kami, mereka itu adalah penghuni neraka.', 2, 6, 2, '112.005.010'),
+(102, 2, '2.005', 'أولئك على هدى من ربهم وأولئك هم المفلحون', 'ulaa-ika ''alaa hudan min rabbihim waulaa-ika humu almuflihuun(a)', '5. Mereka itulah yang tetap mendapat petunjuk dari Tuhan mereka, dan merekalah orang-orang yang beruntung [19]. [19] Ialah orang-orang yang mendapat apa-apa yang dimohonkannya kepada Allah sesudah mengusahakannya.', 2, 1, 2, '087.002.005'),
+(103, 109, '109.003', 'ولا أنتم عابدون ما أعبد', 'Walaa antum ''aabiduuna maa a''bud(u)', '3. Dan kamu bukan penyembah Tuhan yang aku sembah.', 2, 30, 1, '018.109.003'),
+(104, 107, '107.003', 'ولا يحض على طعام المسكين', 'Walaa yahudh-dhu ''alaa tha''aami almiskiin(i)', '3. dan tidak menganjurkan memberi makan orang miskin.', 2, 30, 1, '017.107.003'),
+(105, 88, '88.010', 'في جنة عالية', 'Fii jannatin ''aaliya(tin)', '10. dalam syurga yang tinggi,', 2, 30, 1, '068.088.010'),
+(106, 84, '84.005', 'وأذنت لربها وحقت', 'Wa-adzinat lirabbihaa wahuqqat', '5. dan patuh kepada Tuhannya, dan sudah semestinya bumi itu patuh, (pada waktu itu manusia akan mengetahui akibat perbuatannya).', 2, 30, 1, '083.084.005'),
+(107, 84, '84.002', 'وأذنت لربها وحقت', 'Wa-adzinat lirabbihaa wahuqqat', '2. dan patuh kepada Tuhannya, dan sudah semestinya langit itu patuh,', 2, 30, 1, '083.084.002'),
+(108, 83, '83.035', 'على الأرائك ينظرون', '''alaa al-araa-iki yanzhuruun(a)', '35. mereka (duduk) di atas dipan-dipan sambil memandang.', 2, 30, 1, '086.083.035'),
+(109, 83, '83.023', 'على الأرائك ينظرون', '''alaa al-araa-iki yanzhuruun(a)', '23. mereka (duduk) di atas dipan-dipan sambil memandang.', 2, 30, 1, '086.083.023'),
+(110, 83, '83.022', 'إن الأبرار لفي نعيم', 'Inna al-abraara lafii na''iim(in)', '22. Sesungguhnya orang yang berbakti itu benar-benar berada dalam keni ''matan yang besar (syurga),', 2, 30, 1, '086.083.022'),
+(111, 2, '2.122', 'يا بني إسرائيل اذكروا نعمتي التي أنعمت عليكم وأني فضلتكم على العالمين', 'Yaa banii israa-iila udzkuruu ni''matiya allatii an''amtu ''alaykum wa-annii fadh-dhaltukum ''alaa al''aalamiin(a)', '122. Hai Bani Israil, ingatlah akan ni ''mat-Ku yang telah Ku-anugerahkan kepadamu dan Aku telah melebihkan kamu atas segala umat [85]. [85] maksudnya; umat yang semasa dengan Bani Israil.', 2, 1, 2, '087.002.122'),
+(112, 83, '83.013', 'إذا تتلى عليه آياتنا قال أساطير الأولين', 'Idzaa tutlaa ''alayhi aayaatunaa qaala asaathiiru al-awwaliin(a)', '13. yang apabila dibacakan kepadanya ayat-ayat Kami, ia berkata: "Itu adalah dongengan orang-orang yang dahulu"', 2, 30, 1, '086.083.013'),
+(113, 2, '2.047', 'يا بني إسرائيل اذكروا نعمتي التي أنعمت عليكم وأني فضلتكم على العالمين', 'Yaa banii israa-iila udzkuruu ni''matiya allatii an''amtu ''alaykum wa-annii fadh-dhaltukum ''alaa al''aalamiin(a)', '47. Hai Bani Israil, ingatlah akan ni ''mat-Ku yang telah Aku anugerahkan kepadamu dan (ingatlah pula) bahwasanya Aku telah melebihkan kamu atas segala umat [45]. [45] Bani Israil yang telah diberi rahmat oleh Allah dan dilebihkannya dari segala ummat ialah nenek moyang mereka yang berada di masa Nabi Musa a.s.', 2, 1, 2, '087.002.047'),
+(114, 83, '83.009', 'كتاب مرقوم', 'Kitaabun marquum(un)', '9. (Ialah) kitab yang bertulis.', 2, 30, 1, '086.083.009'),
+(115, 82, '82.013', 'إن الأبرار لفي نعيم', 'Inna al-abraara lafii na''iim(in)', '13. Sesungguhnya orang-orang yang banyak berbakti benar-benar berada dalam syurga yang penuh keni ''matan,', 2, 30, 1, '082.082.013'),
+(116, 81, '81.027', 'إن هو إلا ذكر للعالمين', 'In huwa illaa dzikrun lil''aalamiin(a)', '27. Al Qur ''aan itu tiada lain hanyalah peringatan bagi semesta alam,', 2, 30, 1, '007.081.027'),
+(117, 81, '81.019', 'إنه لقول رسول كريم', 'Innahu laqawlu rasuulin kariim(in)', '19. sesungguhnya Al Qur ''aan itu benar-benar firman (Allah yang dibawa oleh) utusan yang mulia (Jibril),', 2, 30, 1, '007.081.019'),
+(118, 80, '80.032', 'متاعا لكم ولأنعامكم', 'Mataa''an lakum wali-an''aamikum', '32. untuk kesenanganmu dan untuk binatang-binatang ternakmu.', 2, 30, 1, '024.080.032'),
+(119, 80, '80.012', 'فمن شاء ذكره', 'Faman syaa''a dzakarah(u)', '12. maka barangsiapa yang menghendaki, tentulah ia memperhatikannya,', 2, 30, 1, '024.080.012'),
+(120, 79, '79.033', 'متاعا لكم ولأنعامكم', 'Mataa''an lakum wali-an''aamikum', '33. (semua itu) untuk kesenanganmu dan untuk binatang-binatang ternakmu.', 2, 30, 1, '081.079.033'),
+(121, 69, '69.043', 'تنزيل من رب العالمين', 'Tanziilun min rabbi al''aalamiin(a)', '43. Ia adalah wahyu yang diturunkan dari Tuhan semesta alam.', 2, 29, 1, '078.069.043'),
+(122, 83, '83.020', 'كتاب مرقوم', 'Kitaabun marquum(un)', '20. (Yaitu) kitab yang bertulis,', 2, 30, 1, '086.083.020'),
+(123, 7, '7.121', 'قالوا آمنا برب العالمين', 'Qaaluu aamannaa birabbi al''aalamiin(a)', '121. Mereka berkata: "Kami beriman kepada Tuhan semesta alam,', 2, 8, 1, '039.007.121'),
+(124, 70, '70.029', 'والذين هم لفروجهم حافظون', 'Wa(a)lladziina hum lifuruujihim haafizhuun(a)', '29. Dan orang-orang yang memelihara kemaluannya,', 2, 29, 1, '079.070.029'),
+(125, 56, '56.013', 'ثلة من الأولين', 'Thullatun mina al-awwaliin(a)', '13. Segolongan besar dari orang-orang yang terdahulu,', 2, 27, 1, '046.056.013'),
+(126, 56, '56.012', 'في جنات النعيم', 'Fii jannaati a(l)nna''iim(i)', '12. Berada dalam jannah keni ''matan.', 2, 27, 1, '046.056.012'),
+(127, 6, '6.010', 'ولقد استهزئ برسل من قبلك فحاق بالذين سخروا منهم ما كانوا به يستهزئون', 'Walaqadi istuhzi-a birusulin min qablika fahaaqa bi(a)lladziina sakhiruu minhum maa kaanuu bihi yastahzi-uun(a)', '10. Dan sungguh telah diperolok-olokkan beberapa rasul sebelum kamu, maka turunlah kepada orang-orang yang mencemoohkan di antara mereka balasan (azab) olok-olokan mereka.', 2, 7, 1, '055.006.010'),
+(128, 6, '6.015', 'قل إني أخاف إن عصيت ربي عذاب يوم عظيم', 'Qul innii akhaafu in ''ashaytu rabbii ''adzaaba yawmin ''azhiim(in)', '15. Katakanlah: "Sesungguhnya aku takut akan azab hari yang besar (hari kiamat), jika aku mendurhakai Tuhanku."', 2, 7, 1, '055.006.015'),
+(129, 7, '7.078', 'فأخذتهم الرجفة فأصبحوا في دارهم جاثمين', 'Fa-akhadzat-humu a(l)rrajfatu fa-ashbahuu fii daarihim jaatsimiin(a)', '78. Karena itu mereka ditimpa gempa, maka jadilah mereka mayat-mayat yang bergelimpangan di tempat tinggal mereka.', 2, 8, 1, '039.007.078'),
+(130, 7, '7.091', 'فأخذتهم الرجفة فأصبحوا في دارهم جاثمين', 'Fa-akhadzat-humu a(l)rrajfatu fa-ashbahuu fii daarihim jaatsimiin(a)', '91. Kemudian mereka ditimpa gempa, maka jadilah mereka mayat-mayat yang bergelimpangan di dalam rumah-rumah mereka,', 2, 8, 1, '039.007.091'),
+(131, 56, '56.048', 'أو آباؤنا الأولون', 'Awa aabaaunaa al-awwaluun(a)', '48. apakah bapak-bapak kami yang terdahulu (juga)?"', 2, 27, 1, '046.056.048'),
+(132, 7, '7.108', 'ونزع يده فإذا هي بيضاء للناظرين', 'Wanaza''a yadahu fa-idzaa hiya baydhaau li(l)nnaazhiriin(a)', '108. Dan ia mengeluarkan tangannya, maka ketika itu juga tangan itu menjadi putih bercahaya (kelihatan) oleh orang-orang yang melihatnya.', 2, 8, 1, '039.007.108'),
+(133, 56, '56.067', 'بل نحن محرومون', 'Bal nahnu mahruumuun(a)', '67. bahkan kami menjadi orang-orang yang tidak mendapat hasil apa-apa.', 2, 27, 1, '046.056.067'),
+(134, 7, '7.122', 'رب موسى وهارون', 'Rabbi muusaa wahaaruun(a)', '122. "(yaitu) Tuhan Musa dan Harun".', 2, 8, 1, '039.007.122'),
+(135, 7, '7.183', 'وأملي لهم إن كيدي متين', 'Waumlii lahum inna kaydii matiin(un)', '183. Dan Aku memberi tangguh kepada mereka. Sesungguhnya rencana-Ku amat teguh.', 2, 8, 1, '039.007.183'),
+(136, 8, '8.051', 'ذلك بما قدمت أيديكم وأن الله ليس بظلام للعبيد', 'dzaalika bimaa qaddamat aydiikum wa-anna Allaaha laysa bizhallaamin lil''abiid(i)', '51. Demikian itu disebabkan oleh perbuatan tanganmu sendiri. Sesungguhnya Allah sekali-kali tidak menganiaya hamba-Nya,', 2, 9, 2, '088.008.051'),
+(137, 9, '9.033', 'هو الذي أرسل رسوله بالهدى ودين الحق ليظهره على الدين كله ولو كره المشركون', 'Huwa alladzii arsala rasuulahu bi(a)lhudaa wadiini alhaqqi liyuzhhirahu ''alaa a(l)ddiini kullihi walaw kariha almusyrikuun(a)', '33. Dialah yang telah mengutus RasulNya (dengan membawa) petunjuk (Al-Qur ''an) dan agama yang benar untuk dimenangkanNya atas segala agama, walaupun orang-orang musyrikin tidak menyukai.', 2, 10, 2, '113.009.033'),
+(138, 9, '9.073', 'يا أيها النبي جاهد الكفار والمنافقين واغلظ عليهم ومأواهم جهنم وبئس المصير', 'Yaa ayyuhaa a(l)nnabiyyu jaahidi alkuffaara wa(a)lmunaafiqiina wa(u)ghluzh ''alayhim wama''waahum jahannamu wabi''sa almashiir(u)', '73. Hai Nabi, berjihadlah (melawan) orang-orang kafir dan orang-orang munafik itu, dan bersikap keraslah terhadap mereka. Tempat mereka ialah jahannam. Dan itu adalah tempat kembali yang seburuk-buruknya.', 2, 10, 2, '113.009.073'),
+(139, 11, '11.096', 'ولقد أرسلنا موسى بآياتنا وسلطان مبين', 'Walaqad arsalnaa muusaa bi-aayaatinaa wasulthaanin mubiin(in)', '96. Dan sesungguhnya Kami telah mengutus Musa dengan tanda-tanda (kekuasaan) Kami dan mu ''jizat yang nyata,', 2, 11, 1, '052.011.096'),
+(140, 11, '11.110', 'ولقد آتينا موسى الكتاب فاختلف فيه ولولا كلمة سبقت من ربك لقضي بينهم وإنهم لفي شك منه مريب', 'Walaqad aataynaa muusaa alkitaaba fa(i)khtulifa fiihi walawlaa kalimatun sabaqat min rabbika laqudhiya baynahum wa-innahum lafii syakkin minhu muriib(un)', '110. Dan sesungguhnya Kami telah memberikan Kitab (Taurat) kepada Musa, lalu diperselisihkan tentang Kitab itu [738]. Dan seandainya tidak ada ketetapan yang telah terdahulu dari Tuhanmu, niscaya telah ditetapkan hukuman di antara mereka [739]. Dan sesungguhnya mereka (orang-orang kafir Mekah) dalam keraguan yang menggelisahkan terhadap Al Qur ''an.  [738] Ayat ini suatu penghibur kepada Nabi Muhammad s.a.w. Sewaktu beliau menghadapi tantangan terhadap Al Qur ''an oleh orang kafir Mekah. Allah menceritakan bahwa Taurat yang dibawa Nabi Musa a.s. Dahulupun juga dapat tantangan oleh orang-orang Yahudi.  [739] Maksudnya: andaikata tidak ada ketetapan penundaan azab terhadap mereka sampai hari kiamat, tentulah mereka dibinasakan dalam waktu itu juga.', 2, 11, 1, '052.011.110'),
+(141, 14, '14.020', 'وما ذلك على الله بعزيز', 'Wamaa dzaalika ''alaa Allaahi bi''aziiz(in)', '20. dan yang demikian itu sekali-kali tidak sukar bagi Allah.', 2, 13, 1, '072.014.020'),
+(142, 7, '7.107', 'فألقى عصاه فإذا هي ثعبان مبين', 'Fa-alqaa ''ashaahu fa-idzaa hiya tsu''baanun mubiin(un)', '107. Maka Musa menjatuhkan tongkat-nya, lalu seketika itu juga tongkat itu menjadi ular yang sebenarnya.', 2, 8, 1, '039.007.107'),
+(143, 68, '68.015', 'إذا تتلى عليه آياتنا قال أساطير الأولين', 'Idzaa tutlaa ''alayhi aayaatunaa qaala asaathiiru al-awwaliin(a)', '15. Apabila dibacakan kepadanya ayat-ayat Kami, ia berkata: "(Ini adalah) dongeng-dongengan orang-orang dahulu kala."', 2, 29, 1, '002.068.015'),
+(144, 69, '69.040', 'إنه لقول رسول كريم', 'Innahu laqawlu rasuulin kariim(in)', '40. Sesungguhnya Al Qur ''an itu adalah benar-benar wahyu (Allah yang diturunkan kepada) Rasul yang mulia,', 2, 29, 1, '078.069.040'),
+(145, 69, '69.034', 'ولا يحض على طعام المسكين', 'Walaa yahudh-dhu ''alaa tha''aami almiskiin(i)', '34. Dan juga dia tidak mendorong (orang lain) untuk memberi makan orang miskin.', 2, 29, 1, '078.069.034'),
+(146, 69, '69.022', 'في جنة عالية', 'Fii jannatin ''aaliya(tin)', '22. dalam syurga yang tinggi,', 2, 29, 1, '078.069.022'),
+(147, 69, '69.021', 'فهو في عيشة راضية', 'Fahuwa fii ''iisyatin raadhiya(tin)', '21. Maka orang itu berada dalam kehidupan yang diridhai,', 2, 29, 1, '078.069.021'),
+(148, 68, '68.047', 'أم عندهم الغيب فهم يكتبون', 'Am ''indahumu alghaybu fahum yaktubuun(a)', '47. Ataukah ada pada mereka ilmu tentang yang ghaib lalu mereka menulis (padanya apa yang mereka tetapkan)?', 2, 29, 1, '002.068.047'),
+(149, 68, '68.046', 'أم تسألهم أجرا فهم من مغرم مثقلون', 'Am tas-aluhum ajran fahum min maghramin mutsqaluun(a)', '46. Apakah kamu meminta upah kepada mereka, lalu mereka diberati dengan hutang?', 2, 29, 1, '002.068.046'),
+(150, 68, '68.045', 'وأملي لهم إن كيدي متين', 'Waumlii lahum inna kaydii matiin(un)', '45. dan Aku memberi tangguh kepada mereka. Sesungguhnya rencana-Ku amat teguh.', 2, 29, 1, '002.068.045'),
+(151, 56, '56.039', 'ثلة من الأولين', 'Thullatun mina al-awwaliin(a)', '39. (yaitu) segolongan besar dari orang-orang yang terdahulu.', 2, 27, 1, '046.056.039'),
+(152, 68, '68.027', 'بل نحن محرومون', 'Bal nahnu mahruumuun(a)', '27. bahkan kita dihalangi (dari memperoleh hasilnya) [1494]". [1494] Mereka mengatakan ini setelah mereka yakin bahwa yang dilihat mereka adalah kebun mereka sendiri.', 2, 29, 1, '002.068.027'),
+(153, 15, '15.029', 'فإذا سويته ونفخت فيه من روحي فقعوا له ساجدين', 'Fa-idzaa sawwaytuhu wanafakhtu fiihi min ruuhii faqa''uu lahu saajidiin(a)', '29. Maka apabila Aku telah menyempurnakan kejadiannya, dan telah meniupkan kedalamnya ruh (ciptaan)-Ku, maka tunduklah kamu kepadanya dengan bersujud [796].  [796]. Dimaksud dengan sujud di sini bukan menyembah, tetapi sebagai penghormatan.', 2, 13, 1, '054.015.029'),
+(154, 28, '28.002', 'تلك آيات الكتاب المبين', 'Tilka aayaatu alkitaabi almubiin(i)', '2. Ini adalah ayat-ayat Kitab (Al Qur ''an) yang nyata (dari Allah).', 2, 20, 1, '049.028.002'),
+(155, 66, '66.009', 'يا أيها النبي جاهد الكفار والمنافقين واغلظ عليهم ومأواهم جهنم وبئس المصير', 'Yaa ayyuhaa a(l)nnabiyyu jaahidi alkuffaara wa(a)lmunaafiqiina wa(u)ghluzh ''alayhim wama''waahum jahannamu wabi''sa almashiir(u)', '9. Hai Nabi, perangilah orang-orang kafir dan orang-orang munafik dan bersikap keraslah terhadap mereka. Tempat mereka adalah jahannam dan itu adalah seburuk-buruknya tempat kembali.', 2, 28, 2, '107.066.009'),
+(156, 61, '61.009', 'هو الذي أرسل رسوله بالهدى ودين الحق ليظهره على الدين كله ولو كره المشركون', 'Huwa alladzii arsala rasuulahu bi(a)lhudaa wadiini alhaqqi liyuzhhirahu ''alaa a(l)ddiini kullihi walaw kariha almusyrikuun(a)', '9. Dia-lah yang mengutus Rasul-Nya dengan membawa petunjuk dan agama yang benar agar Dia memenangkannya di atas segala agama-agama meskipun orang musyrik membenci.', 2, 28, 2, '109.061.009'),
+(157, 61, '61.001', 'سبح لله ما في السماوات وما في الأرض وهو العزيز الحكيم', 'Sabbaha lillaahi maa fii a(l)ssamaawaati wamaa fii al-ardhi wahuwa al''aziizu alhakiim(u)', '1. Telah bertasbih kepada Allah apa saja yang ada di langit dan apa saja yang ada di bumi; dan Dia-lah Yang Maha Perkasa lagi Maha Bijaksana.', 2, 28, 2, '109.061.001'),
+(158, 59, '59.001', 'سبح لله ما في السماوات وما في الأرض وهو العزيز الحكيم', 'Sabbaha lillaahi maa fii a(l)ssamaawaati wamaa fii al-ardhi wahuwa al''aziizu alhakiim(u)', '1. Telah bertasbih kepada Allah apa yang ada di langit dan bumi; dan Dialah Yang Maha Perkasa lagi Maha Bijaksana.', 2, 28, 2, '101.059.001'),
+(159, 101, '101.007', 'فهو في عيشة راضية', 'Fahuwa fii ''iisyatin raadhiya(tin)', '7. maka dia berada dalam kehidupan yang memuaskan.', 2, 30, 1, '030.101.007'),
+(160, 56, '56.080', 'تنزيل من رب العالمين', 'Tanziilun min rabbi al''aalamiin(a)', '80. Diturunkan dari Rabbil ''alamiin.', 2, 27, 1, '046.056.080'),
+(161, 6, '6.004', 'وما تأتيهم من آية من آيات ربهم إلا كانوا عنها معرضين', 'Wamaa ta''tiihim min aayatin min aayaati rabbihim illaa kaanuu ''anhaa mu''ridhiin(a)', '4. Dan tidak ada suatu ayatpun dari ayat-ayat [458] Tuhan sampai kepada mereka, melainkan mereka selalu berpaling dari padanya (mendustakannya). [458] "Ayat" di sini berarti mu ''jizat atau ayat Al Qur''an atau peristiwa-peristiwa yang terjadi dalam alam yang menunjukkan kekuasaan Allah.', 2, 7, 1, '055.006.004'),
+(162, 68, '68.036', 'ما لكم كيف تحكمون', 'Maa lakum kayfa tahkumuun(a)', '36. Atau adakah kamu (berbuat demikian): bagaimanakah kamu mengambil keputusan?', 2, 29, 1, '002.068.036'),
+(163, 37, '37.132', 'إنه من عبادنا المؤمنين', 'Innahu min ''ibaadinaa almu''miniin(a)', '132. Sesungguhnya dia termasuk hamba-hamba Kami yang beriman.', 3, 23, 1, '056.037.132'),
+(164, 45, '45.002', 'تنزيل الكتاب من الله العزيز الحكيم', 'Tanziilu alkitaabi mina Allaahi al''aziizi alhakiim(i)', '2. Kitab (ini) diturunkan dari Allah Yang Maha Perkasa lagi Maha Bijaksana.', 3, 25, 1, '065.045.002'),
+(165, 69, '69.052', 'فسبح باسم ربك العظيم', 'Fasabbih bi(i)smi rabbika al''azhiim(i)', '52. Maka bertasbihlah dengan (menyebut) nama Tuhanmu Yang Maha Besar.', 3, 29, 1, '078.069.052'),
+(166, 56, '56.096', 'فسبح باسم ربك العظيم', 'Fasabbih bi(i)smi rabbika al''azhiim(i)', '96. Maka bertasbihlah dengan (menyebut) nama Rabbmu Yang Maha Besar.', 3, 27, 1, '046.056.096'),
+(167, 56, '56.074', 'فسبح باسم ربك العظيم', 'Fasabbih bi(i)smi rabbika al''azhiim(i)', '74. Maka bertasbihlah dengan (menyebut) nama Rabbmu Yang Maha Besar.', 3, 27, 1, '046.056.074'),
+(168, 54, '54.030', 'فكيف كان عذابي ونذر', 'Fakayfa kaana ''adzaabii wanudzur(i)', '30. Alangkah dahsyatnya azab-Ku dan ancaman-ancaman-Ku.', 3, 27, 1, '037.054.030'),
+(169, 54, '54.021', 'فكيف كان عذابي ونذر', 'Fakayfa kaana ''adzaabii wanudzur(i)', '21. Maka alangkah dahsyatnya azab-Ku dan ancaman-ancaman-Ku.', 3, 27, 1, '037.054.021'),
+(170, 54, '54.016', 'فكيف كان عذابي ونذر', 'Fakayfa kaana ''adzaabii wanudzur(i)', '16. Maka alangkah dahsyatnya azab-Ku dan ancaman-ancaman-Ku.', 3, 27, 1, '037.054.016'),
+(171, 46, '46.002', 'تنزيل الكتاب من الله العزيز الحكيم', 'Tanziilu alkitaabi mina Allaahi al''aziizi alhakiim(i)', '2. Diturunkan Kitab ini dari Allah Yang Maha Perkasa lagi Maha Bijaksana.', 3, 26, 1, '066.046.002'),
+(172, 39, '39.001', 'تنزيل الكتاب من الله العزيز الحكيم', 'Tanziilu alkitaabi mina Allaahi al''aziizi alhakiim(i)', '1. Kitab (Al Qur''an ini) diturunkan oleh Allah Yang Maha Perkasa lagi Maha Bijaksana.', 3, 23, 1, '059.039.001'),
+(173, 37, '37.129', 'وتركنا عليه في الآخرين', 'Wataraknaa ''alayhi fii al-aakhiriin(a)', '129. Dan Kami abadikan untuk Ilyas (pujian yang baik) di kalangan orang-orang yang datang kemudian.', 3, 23, 1, '056.037.129'),
+(174, 37, '37.111', 'إنه من عبادنا المؤمنين', 'Innahu min ''ibaadinaa almu''miniin(a)', '111. Sesungguhnya ia termasuk hamba-hamba Kami yang beriman.', 3, 23, 1, '056.037.111'),
+(175, 37, '37.108', 'وتركنا عليه في الآخرين', 'Wataraknaa ''alayhi fii al-aakhiriin(a)', '108. Kami abadikan untuk Ibrahim itu (pujian yang baik) di kalangan orang-orang yang datang kemudian,', 3, 23, 1, '056.037.108'),
+(176, 37, '37.081', 'إنه من عبادنا المؤمنين', 'Innahu min ''ibaadinaa almu''miniin(a)', '81. Sesungguhnya dia termasuk di antara hamba-hamba Kami yang beriman.', 3, 23, 1, '056.037.081'),
+(177, 37, '37.078', 'وتركنا عليه في الآخرين', 'Wataraknaa ''alayhi fii al-aakhiriin(a)', '78. Dan Kami abadikan untuk Nuh itu (pujian yang baik) di kalangan orang-orang yang datang kemudian;', 3, 23, 1, '056.037.078'),
+(178, 54, '54.022', 'ولقد يسرنا القرآن للذكر فهل من مدكر', 'Walaqad yassarnaa alqur-aana li(l)dz-dzikri fahal min muddakir(in)', '22. Dan sesungguhnya telah Kami mudahkan Al Qur''an untuk pelajaran, maka adakah orang yang mengambil pelajaran?', 4, 27, 1, '037.054.022'),
+(179, 77, '77.044', 'إنا كذلك نجزي المحسنين', 'Innaa kadzaalika najzii almuhsiniin(a)', '44. Sesungguhnya demikianlah Kami memberi balasan kepada orang-orang yang berbuat baik.', 4, 29, 1, '033.077.044'),
+(180, 54, '54.040', 'ولقد يسرنا القرآن للذكر فهل من مدكر', 'Walaqad yassarnaa alqur-aana li(l)dz-dzikri fahal min muddakir(in)', '40. Dan sesungguhnya telah Kami mudahkan Al Qur''an untuk pelajaran, maka adakah orang yang mengambil pelajaran?', 4, 27, 1, '037.054.040'),
+(181, 54, '54.032', 'ولقد يسرنا القرآن للذكر فهل من مدكر', 'Walaqad yassarnaa alqur-aana li(l)dz-dzikri fahal min muddakir(in)', '32. Dan sesungguhnya telah Kami mudahkan Al Qur''an untuk pelajaran, maka adakah orang yang mengambil pelajaran?', 4, 27, 1, '037.054.032'),
+(182, 54, '54.017', 'ولقد يسرنا القرآن للذكر فهل من مدكر', 'Walaqad yassarnaa alqur-aana li(l)dz-dzikri fahal min muddakir(in)', '17. Dan sesungguhnya telah Kami mudahkan Al Qur''an untuk pelajaran, maka adakah orang yang mengambil pelajaran?', 4, 27, 1, '037.054.017'),
+(183, 37, '37.040', 'إلا عباد الله المخلصين', 'Illaa ''ibaada Allaahi almukhlashiin(a)', '40. tetapi hamba-hamba Allah yang dibersihkan (dari dosa).', 4, 23, 1, '056.037.040');
+INSERT INTO `ayat` (`no`, `id_surat`, `no_ayat`, `bunyi`, `transliterasi`, `arti`, `repetisi`, `juz`, `id_tempat`, `no_turun`) VALUES
+(184, 37, '37.131', 'إنا كذلك نجزي المحسنين', 'Innaa kadzaalika najzii almuhsiniin(a)', '131. Sesungguhnya demikianlah Kami memberi balasan kepada orang-orang yang berbuat baik.', 4, 23, 1, '056.037.131'),
+(185, 37, '37.074', 'إلا عباد الله المخلصين', 'Illaa ''ibaada Allaahi almukhlashiin(a)', '74. Tetapi hamba-hamba Allah yang dibersihkan (dari dosa tidak akan diazab).', 4, 23, 1, '056.037.074'),
+(186, 37, '37.160', 'إلا عباد الله المخلصين', 'Illaa ''ibaada Allaahi almukhlashiin(a)', '160. Kecuali hamba-hamba Allah [1293] yang dibersihkan dari (dosa). [1293] Yang dimaksud "hamba Allah" di sini ialah golongan jin yang beriman.', 4, 23, 1, '056.037.160'),
+(187, 37, '37.128', 'إلا عباد الله المخلصين', 'Illaa ''ibaada Allaahi almukhlashiin(a)', '128. kecuali hamba-hamba Allah yang dibersihkan (dari dosa).', 4, 23, 1, '056.037.128'),
+(188, 37, '37.121', 'إنا كذلك نجزي المحسنين', 'Innaa kadzaalika najzii almuhsiniin(a)', '121. Sesungguhnya demikianlah Kami memberi balasan kepada orang-orang yang berbuat baik.', 4, 23, 1, '056.037.121'),
+(189, 37, '37.080', 'إنا كذلك نجزي المحسنين', 'Innaa kadzaalika najzii almuhsiniin(a)', '80. Sesungguhnya demikianlah Kami memberi balasan kepada orang-orang yang berbuat baik.', 4, 23, 1, '056.037.080'),
+(190, 26, '26.127', 'وما أسألكم عليه من أجر إن أجري إلا على رب العالمين', 'Wamaa as-alukum ''alayhi min ajrin in ajriya illaa ''alaa rabbi al''aalamiin(a)', '127. Dan sekali-kali aku tidak minta upah kepadamu atas ajakan itu; upahku tidak lain hanyalah dari Tuhan semesta alam.', 5, 19, 1, '047.026.127'),
+(191, 26, '26.178', 'إني لكم رسول أمين', 'Innii lakum rasuulun amiin(un)', '178. Sesungguhnya aku adalah seorang rasul kepercayaan (yang diutus) kepadamu.', 5, 19, 1, '047.026.178'),
+(192, 26, '26.107', 'إني لكم رسول أمين', 'Innii lakum rasuulun amiin(un)', '107. Sesungguhnya aku adalah seorang rasul kepercayaan (yang diutus) kepadamu,', 5, 19, 1, '047.026.107'),
+(193, 26, '26.109', 'وما أسألكم عليه من أجر إن أجري إلا على رب العالمين', 'Wamaa as-alukum ''alayhi min ajrin in ajriya illaa ''alaa rabbi al''aalamiin(a)', '109. Dan aku sekali-kali tidak minta upah kepadamu atas ajakan-ajakan itu; upahku tidak lain hanyalah dari Tuhan semesta alam.', 5, 19, 1, '047.026.109'),
+(194, 26, '26.180', 'وما أسألكم عليه من أجر إن أجري إلا على رب العالمين', 'Wamaa as-alukum ''alayhi min ajrin in ajriya illaa ''alaa rabbi al''aalamiin(a)', '180. dan aku sekali-kali tidak minta upah kepadamu atas ajakan itu; upahku tidak lain hanyalah dari Tuhan semesta alam.', 5, 19, 1, '047.026.180'),
+(195, 26, '26.164', 'وما أسألكم عليه من أجر إن أجري إلا على رب العالمين', 'Wamaa as-alukum ''alayhi min ajrin in ajriya illaa ''alaa rabbi al''aalamiin(a)', '164. Dan aku sekali-kali tidak minta upah kepadamu atas ajakan itu; upahku tidak lain hanyalah dari Tuhan semesta alam.', 5, 19, 1, '047.026.164'),
+(196, 26, '26.125', 'إني لكم رسول أمين', 'Innii lakum rasuulun amiin(un)', '125. Sesungguhnya aku adalah seorang rasul kepercayaan (yang diutus) kepadamu,', 5, 19, 1, '047.026.125'),
+(197, 26, '26.143', 'إني لكم رسول أمين', 'Innii lakum rasuulun amiin(un)', '143. Sesungguhnya aku adalah seorang rasul kepercayaan (yang diutus) kepadamu,', 5, 19, 1, '047.026.143'),
+(198, 26, '26.145', 'وما أسألكم عليه من أجر إن أجري إلا على رب العالمين', 'Wamaa as-alukum ''alayhi min ajrin in ajriya illaa ''alaa rabbi al''aalamiin(a)', '145. Dan aku sekali-kali tidak minta upah kepadamu atas ajakan itu, upahku tidak lain hanyalah dari Tuhan semesta alam.', 5, 19, 1, '047.026.145'),
+(199, 26, '26.162', 'إني لكم رسول أمين', 'Innii lakum rasuulun amiin(un)', '162. Sesungguhnya aku adalah seorang rasul kepercayaan (yang diutus) kepadamu,', 5, 19, 1, '047.026.162'),
+(200, 21, '21.038', 'ويقولون متى هذا الوعد إن كنتم صادقين', 'Wayaquuluuna mataa haadzaa alwa''du in kuntum shaadiqiin(a)', '38. Mereka berkata: "Kapankah janji itu akan datang, jika kamu sekalian adalah orang-orang yang benar?"', 6, 17, 1, '073.021.038'),
+(201, 27, '27.071', 'ويقولون متى هذا الوعد إن كنتم صادقين', 'Wayaquuluuna mataa haadzaa alwa''du in kuntum shaadiqiin(a)', '71. Dan mereka (orang-orang kafir) berkata: "Bilakah datangnya azab itu, jika memang kamu orang-orang yang benar".', 6, 19, 1, '048.027.071'),
+(202, 26, '26.008', 'إن في ذلك لآية وما كان أكثرهم مؤمنين', 'Inna fii dzaalika laa''ayatan wamaa kaana aktsaruhum mu''miniin(a)', '8. Sesungguhnya pada yang demikian itu benar-benar terdapat suatu tanda kekuasaan Allah. Dan kebanyakan mereka tidak beriman.', 6, 19, 1, '047.026.008'),
+(203, 31, '31.001', 'الم', 'Alif-laam-miim', '1. Alif Laam Miim [1179]. [1179] Lihat not 10', 6, 21, 1, '057.031.001'),
+(204, 10, '10.048', 'ويقولون متى هذا الوعد إن كنتم صادقين', 'Wayaquuluuna mataa haadzaa alwa''du in kuntum shaadiqiin(a)', '48. Mereka mengatakan: "Bilakah (datangnya) ancaman itu, jika memang kamu orang-orang yang benar?"', 6, 11, 1, '051.010.048'),
+(205, 36, '36.048', 'ويقولون متى هذا الوعد إن كنتم صادقين', 'Wayaquuluuna mataa haadzaa alwa''du in kuntum shaadiqiin(a)', '48. Dan mereka berkata: "Bilakah (terjadinya) janji ini (hari berbangkit) jika kamu adalah orang-orang yang benar?".', 6, 22, 1, '041.036.048'),
+(206, 30, '30.001', 'الم', 'Alif-laam-miim', '1. Alif Laam Miim [1161]. [1161] Lihat not. [10]', 6, 21, 1, '084.030.001'),
+(207, 3, '3.001', 'الم', 'Alif-laam-miim', '1. Alif laam miim.', 6, 3, 2, '089.003.001'),
+(208, 34, '34.029', 'ويقولون متى هذا الوعد إن كنتم صادقين', 'Wayaquuluuna mataa haadzaa alwa''du in kuntum shaadiqiin(a)', '29. Dan mereka berkata: "Kapankah (datangnya) janji ini, jika kamu adalah orang-orang yang benar?".', 6, 22, 1, '058.034.029'),
+(209, 67, '67.025', 'ويقولون متى هذا الوعد إن كنتم صادقين', 'Wayaquuluuna mataa haadzaa alwa''du in kuntum shaadiqiin(a)', '25. Dan mereka berkata: "Kapankah datangnya ancaman itu jika kamu adalah orang-orang yang benar?"', 6, 29, 1, '077.067.025'),
+(210, 32, '32.001', 'الم', 'Alif-laam-miim', '1. Alif Laam Miim', 6, 21, 1, '075.032.001'),
+(211, 26, '26.190', 'إن في ذلك لآية وما كان أكثرهم مؤمنين', 'Inna fii dzaalika laa''ayatan wamaa kaana aktsaruhum mu''miniin(a)', '190. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda (kekuasaan Allah), tetapi kebanyakan mereka tidak beriman.', 6, 19, 1, '047.026.190'),
+(212, 29, '29.001', 'الم', 'Alif-laam-miim', '1. Alif laam miim (1145). [1145] Lihat not. 10.', 6, 20, 1, '085.029.001'),
+(213, 26, '26.103', 'إن في ذلك لآية وما كان أكثرهم مؤمنين', 'Inna fii dzaalika laa''ayatan wamaa kaana aktsaruhum mu''miniin(a)', '103. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kekuasaan Allah), tetapi kebanyakan mereka tidak beriman.', 6, 19, 1, '047.026.103'),
+(214, 26, '26.121', 'إن في ذلك لآية وما كان أكثرهم مؤمنين', 'Inna fii dzaalika laa''ayatan wamaa kaana aktsaruhum mu''miniin(a)', '121. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda (kekuasaan Allah), tetapi kebanyakan mereka tidak beriman.', 6, 19, 1, '047.026.121'),
+(215, 2, '2.001', 'الم', 'Alif-laam-miim', '1. Alif laam miin [10]. [10] Ialah huruf-huruf abjad yang terletak pada permulaan sebagian dari surat-surat Al Qur ''an seperti: alif laam miim, alif laam raa, alif laam miim shaad dan sebagainya. Diantara ahli-ahli tafsir ada yang menyerahkan pengertiannya kepada Allah karena dipandang termasuk ayat-ayat mutasyaabihaat, dan ada pula yang menafsirkannya. Golongan yang menafsirkannya ada yang memandangnya sebagai nama surat, dan ada pula yang berpendapat bahwa huruf-huruf abjad itu gunanya untuk menarik perhatian para pendengar supaya memperhatikan Al Qur ''an itu, dan untuk mengisyaratkan bahwa Al Qur ''an itu diturunkan dari Allah dalam bahasa Arab yang tersusun dari huruf-huruf abjad. Kalau mereka tidak percaya bahwa Al Qur ''an diturunkan dari Allah dan hanya buatan Muhammad s.a.w. semata-mata, maka cobalah mereka buat semacam Al Quran itu.', 6, 1, 2, '087.002.001'),
+(216, 26, '26.067', 'إن في ذلك لآية وما كان أكثرهم مؤمنين', 'Inna fii dzaalika laa''ayatan wamaa kaana aktsaruhum mu''miniin(a)', '67. Sesungguhnya pada yang demikian itu benar-benar merupakan suatu tanda yang besar (mu ''jizat) dan tetapi adalah kebanyakan mereka tidak beriman.', 6, 19, 1, '047.026.067'),
+(217, 26, '26.174', 'إن في ذلك لآية وما كان أكثرهم مؤمنين', 'Inna fii dzaalika laa''ayatan wamaa kaana aktsaruhum mu''miniin(a)', '174. Sesungguhnya pada yang demikian itu benar-benar terdapat bukti-bukti yang nyata. Dan adalah kebanyakan mereka tidak beriman.', 6, 19, 1, '047.026.174'),
+(218, 46, '46.001', 'حم', 'haa-miim', '1. Haa Miim [1386].  [1386] Lihat not 10.', 7, 26, 1, '066.046.001'),
+(219, 45, '45.001', 'حم', 'haa-miim', '1. Haa Miim [1386].  [1386] Lihat not 10.', 7, 25, 1, '065.045.001'),
+(220, 44, '44.001', 'حم', 'haa-miim', '1. Haa Miim [1369].  [1369] Lihat not 10.', 7, 25, 1, '064.044.001'),
+(221, 43, '43.001', 'حم', 'haa-miim', '1. Haa Miim [1349].  [1349] Lihat not 10.', 7, 25, 1, '063.043.001'),
+(222, 42, '42.001', 'حم', 'haa-miim', '1. Haa Miim [1338]. [1338] Lihat not [10].', 7, 25, 1, '062.042.001'),
+(223, 41, '41.001', 'حم', 'haa-miim', '1. Haa Miim. [1331] [1331] Lihat footnote [10]', 7, 24, 1, '061.041.001'),
+(224, 40, '40.001', 'حم', 'haa-miim', '1. Haa Miim [1318]. [1318] Lihat not 10.', 7, 24, 1, '060.040.001'),
+(225, 26, '26.108', 'فاتقوا الله وأطيعون', 'Fa(i)ttaquu Allaaha wa-athii''uun(i)', '108. maka bertakwalah kepada Allah dan taatlah kepadaku.', 8, 19, 1, '047.026.108'),
+(226, 26, '26.131', 'فاتقوا الله وأطيعون', 'Fa(i)ttaquu Allaaha wa-athii''uun(i)', '131. Maka bertakwalah kepada Allah dan taatlah kepadaku.', 8, 19, 1, '047.026.131'),
+(227, 26, '26.140', 'وإن ربك لهو العزيز الرحيم', 'Wa-inna rabbaka lahuwa al''aziizu a(l)rrahiim(u)', '140. Dan sesungguhnya Tuhanmu, Dialah Yang Maha Perkasa lagi Maha Penyayang.', 8, 19, 1, '047.026.140'),
+(228, 26, '26.150', 'فاتقوا الله وأطيعون', 'Fa(i)ttaquu Allaaha wa-athii''uun(i)', '150. maka bertakwalah kepada Allah dan taatlah kepadaku;', 8, 19, 1, '047.026.150'),
+(229, 26, '26.122', 'وإن ربك لهو العزيز الرحيم', 'Wa-inna rabbaka lahuwa al''aziizu a(l)rrahiim(u)', '122. Dan sesungguhnya Tuhanmu Dialah Yang Maha Perkasa lagi Maha Penyayang.', 8, 19, 1, '047.026.122'),
+(230, 26, '26.144', 'فاتقوا الله وأطيعون', 'Fa(i)ttaquu Allaaha wa-athii''uun(i)', '144. maka bertakwalah kepada Allah dan taatlah kepadaku.', 8, 19, 1, '047.026.144'),
+(231, 26, '26.110', 'فاتقوا الله وأطيعون', 'Fa(i)ttaquu Allaaha wa-athii''uun(i)', '110. Maka bertakwalah kepada Allah dan taatlah kepadaku".', 8, 19, 1, '047.026.110'),
+(232, 26, '26.191', 'وإن ربك لهو العزيز الرحيم', 'Wa-inna rabbaka lahuwa al''aziizu a(l)rrahiim(u)', '191. Dan sesungguhnya Tuhanmu benar-benar Dialah Yang Maha Perkasa lagi Maha Penyayang.', 8, 19, 1, '047.026.191'),
+(233, 26, '26.126', 'فاتقوا الله وأطيعون', 'Fa(i)ttaquu Allaaha wa-athii''uun(i)', '126. maka bertakwalah kepada Allah dan ta ''atlah kepadaku.', 8, 19, 1, '047.026.126'),
+(234, 26, '26.104', 'وإن ربك لهو العزيز الرحيم', 'Wa-inna rabbaka lahuwa al''aziizu a(l)rrahiim(u)', '104. Dan sesungguhnya Tuhanmu benar-benar Dialah Yang Maha Perkasa lagi Maha Penyayang.', 8, 19, 1, '047.026.104'),
+(235, 26, '26.175', 'وإن ربك لهو العزيز الرحيم', 'Wa-inna rabbaka lahuwa al''aziizu a(l)rrahiim(u)', '175. Dan sesungguhnya Tuhanmu, benar-benar Dialah Yang Maha Perkasa lagi Maha Penyayang.', 8, 19, 1, '047.026.175'),
+(236, 26, '26.159', 'وإن ربك لهو العزيز الرحيم', 'Wa-inna rabbaka lahuwa al''aziizu a(l)rrahiim(u)', '159. Dan sesungguhnya Tuhanmu benar-benar Dialah Yang Maha Perkasa lagi Maha Penyayang.', 8, 19, 1, '047.026.159'),
+(237, 26, '26.163', 'فاتقوا الله وأطيعون', 'Fa(i)ttaquu Allaaha wa-athii''uun(i)', '163. maka bertakwalah kepada Allah dan taatlah kepadaku.', 8, 19, 1, '047.026.163'),
+(238, 26, '26.068', 'وإن ربك لهو العزيز الرحيم', 'Wa-inna rabbaka lahuwa al''aziizu a(l)rrahiim(u)', '68. Dan sesungguhnya Tuhanmu benar-benar Dialah Yang Maha Perkasa lagi Maha Penyayang.', 8, 19, 1, '047.026.068'),
+(239, 26, '26.009', 'وإن ربك لهو العزيز الرحيم', 'Wa-inna rabbaka lahuwa al''aziizu a(l)rrahiim(u)', '9. Dan sesungguhnya Tuhanmu benar-benar Dialah Yang Maha Perkasa lagi Maha Penyayang.', 8, 19, 1, '047.026.009'),
+(240, 26, '26.179', 'فاتقوا الله وأطيعون', 'Fa(i)ttaquu Allaaha wa-athii''uun(i)', '179. maka bertakwalah kepada Allah dan taatlah kepadaku;', 8, 19, 1, '047.026.179'),
+(241, 77, '77.024', 'ويل يومئذ للمكذبين', 'Waylun yawma-idzin lilmukadz-dzibiin(a)', '24. Kecelakaan yang besarlah pada hari itu bagi orang-orang yang mendustakan.', 11, 29, 1, '033.077.024'),
+(242, 77, '77.015', 'ويل يومئذ للمكذبين', 'Waylun yawma-idzin lilmukadz-dzibiin(a)', '15. Kecelakaan yang besarlah pada hari itu bagi orang-orang yang mendustakan.', 11, 29, 1, '033.077.015'),
+(243, 77, '77.019', 'ويل يومئذ للمكذبين', 'Waylun yawma-idzin lilmukadz-dzibiin(a)', '19. Kecelakaan yang besarlah pada hari itu bagi orang-orang yang mendustakan.', 11, 29, 1, '033.077.019'),
+(244, 77, '77.028', 'ويل يومئذ للمكذبين', 'Waylun yawma-idzin lilmukadz-dzibiin(a)', '28. Kecelakaan yang besarlah pada hari itu bagi orang-orang yang mendustakan.', 11, 29, 1, '033.077.028'),
+(245, 77, '77.034', 'ويل يومئذ للمكذبين', 'Waylun yawma-idzin lilmukadz-dzibiin(a)', '34. Kecelakaan yang besarlah pada hari itu bagi orang-orang yang mendustakan.', 11, 29, 1, '033.077.034'),
+(246, 77, '77.037', 'ويل يومئذ للمكذبين', 'Waylun yawma-idzin lilmukadz-dzibiin(a)', '37. Kecelakaan yang besarlah pada hari itu bagi orang-orang yang mendustakan.', 11, 29, 1, '033.077.037'),
+(247, 77, '77.040', 'ويل يومئذ للمكذبين', 'Waylun yawma-idzin lilmukadz-dzibiin(a)', '40. Kecelakaan yang besarlah pada hari itu bagi orang-orang yang mendustakan.', 11, 29, 1, '033.077.040'),
+(248, 77, '77.045', 'ويل يومئذ للمكذبين', 'Waylun yawma-idzin lilmukadz-dzibiin(a)', '45. Kecelakaan yang besarlah pada hari itu bagi orang-orang yang mendustakan.', 11, 29, 1, '033.077.045'),
+(249, 77, '77.049', 'ويل يومئذ للمكذبين', 'Waylun yawma-idzin lilmukadz-dzibiin(a)', '49. Kecelakaan yang besarlah pada hari itu bagi orang-orang yang mendustakan.', 11, 29, 1, '033.077.049'),
+(250, 83, '83.010', 'ويل يومئذ للمكذبين', 'Waylun yawma-idzin lilmukadz-dzibiin(a)', '10. Kecelakaan yang besarlah pada hari itu bagi orang-orang yang mendustakan,', 11, 30, 1, '086.083.010'),
+(251, 77, '77.047', 'ويل يومئذ للمكذبين', 'Waylun yawma-idzin lilmukadz-dzibiin(a)', '47. Kecelakaan yang besarlah pada hari itu bagi orang-orang yang mendustakan.', 11, 29, 1, '033.077.047'),
+(252, 55, '55.067', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '67. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.067'),
+(253, 55, '55.016', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '16. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.016'),
+(254, 55, '55.077', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '77. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.077'),
+(255, 55, '55.075', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '75. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.075'),
+(256, 55, '55.073', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '73. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.073'),
+(257, 55, '55.071', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '71. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.071'),
+(258, 55, '55.069', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '69. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.069'),
+(259, 55, '55.042', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '42. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.042'),
+(260, 55, '55.013', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '13. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.013'),
+(261, 55, '55.018', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '18. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.018'),
+(262, 55, '55.023', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '23. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.023'),
+(263, 55, '55.025', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '25. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.025'),
+(264, 55, '55.028', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '28. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.028'),
+(265, 55, '55.030', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '30. Maka ni ''mat Rabb-mu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.030'),
+(266, 55, '55.032', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '32. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.032'),
+(267, 55, '55.034', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '34. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.034'),
+(268, 55, '55.036', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '36. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.036'),
+(269, 55, '55.021', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '21. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.021'),
+(270, 55, '55.040', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '40. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.040'),
+(271, 55, '55.065', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '65. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.065'),
+(272, 55, '55.045', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '45. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.045'),
+(273, 55, '55.047', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '47. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?,', 31, 27, 2, '097.055.047'),
+(274, 55, '55.049', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '49. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.049'),
+(275, 55, '55.051', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '51. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.051'),
+(276, 55, '55.053', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '53. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.053'),
+(277, 55, '55.055', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '55. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.055'),
+(278, 55, '55.057', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '57. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.057'),
+(279, 55, '55.059', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '59. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.059'),
+(280, 55, '55.061', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '61. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.061'),
+(281, 55, '55.063', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '63. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.063'),
+(282, 55, '55.038', 'فبأي آلاء ربكما تكذبان', 'Fabi-ayyi aalaa-i rabbikumaa tukadz-dzibaan(i)', '38. Maka ni ''mat Tuhan kamu yang manakah yang kamu dustakan?', 31, 27, 2, '097.055.038');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `surat`
+--
+
+CREATE TABLE IF NOT EXISTS `surat` (
+  `id_surat` tinyint(3) NOT NULL,
+  `surat` text NOT NULL,
+  `jml_ayat` smallint(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `surat`
+--
+
+INSERT INTO `surat` (`id_surat`, `surat`, `jml_ayat`) VALUES
+(1, 'Al Faatihah', 7),
+(2, 'Al Baqarah', 286),
+(3, 'Ali ''Imran', 200),
+(4, 'An Nisaa''', 176),
+(5, 'Al Maa-idah', 120),
+(6, 'Al An''aam', 165),
+(7, 'Al A''raaf', 206),
+(8, 'Al Anfaal', 75),
+(9, 'At Taubah', 129),
+(10, 'Yunus', 109),
+(11, 'Hud', 123),
+(12, 'Yusuf', 111),
+(13, 'Ar-Ra''d', 43),
+(14, 'Ibrahim', 52),
+(15, 'Al Hijr', 99),
+(16, 'An Nahl', 128),
+(17, 'Al Isra', 111),
+(18, 'Al Kahfi', 110),
+(19, 'Maryam', 98),
+(20, 'Tha Ha', 135),
+(21, 'Al Anbiyaa''', 112),
+(22, 'Al Hajj', 78),
+(23, 'Al Mu''minuun', 118),
+(24, 'An Nuur', 64),
+(25, 'Al Furqaan', 77),
+(26, 'Asy Syu''araa''', 227),
+(27, 'An Naml', 93),
+(28, 'Al Qashash', 88),
+(29, 'Al Ankabut', 69),
+(30, 'Ar Ruum', 60),
+(31, 'Luqman', 34),
+(32, 'As Sajadah', 30),
+(33, 'Al Ahzab', 73),
+(34, 'Saba''', 54),
+(35, 'Faathir', 45),
+(36, 'Yaa Siin', 83),
+(37, 'Ash-Shaffaat', 182),
+(38, 'Shaad', 88),
+(39, 'Az-Zumar', 75),
+(40, 'Al Mu''min', 85),
+(41, 'Fush Shilat', 54),
+(42, 'Asy Syuura', 53),
+(43, 'Az Zukhruf', 89),
+(44, 'Ad Dukhan', 59),
+(45, 'Al Jaatsiyah', 37),
+(46, 'Al Ahqaaf', 35),
+(47, 'Muhammad', 38),
+(48, 'Al Fath', 29),
+(49, 'Al Hujurat', 18),
+(50, 'Qaaf', 45),
+(51, 'Adz-Dzaariyaat', 60),
+(52, 'Ath-Thuur', 49),
+(53, 'An-Najm', 62),
+(54, 'Al Qamar', 55),
+(55, 'Ar Rahman', 78),
+(56, 'Al Waaqiah', 96),
+(57, 'Al Hadiid', 29),
+(58, 'Al Mujaadilah', 22),
+(59, 'Al Hasyr', 24),
+(60, 'Al Mumtahanah', 13),
+(61, 'Ash-Shaff', 14),
+(62, 'Al Jumu''ah', 11),
+(63, 'Al Munaafiquun', 11),
+(64, 'At Taghabun', 18),
+(65, 'Ath Thalaq', 12),
+(66, 'At Tahrim', 12),
+(67, 'Al Mulk', 30),
+(68, 'Al Qalam', 52),
+(69, 'Al Haaqqah', 52),
+(70, 'Al Ma''aarij', 44),
+(71, 'Nuh', 28),
+(72, 'Al Jin', 28),
+(73, 'Al Muzzammil', 20),
+(74, 'Al Muddatstsir', 56),
+(75, 'Al Qiyaamah', 40),
+(76, 'Al Insaan', 31),
+(77, 'Al Mursalaat', 50),
+(78, 'An-Naba''', 40),
+(79, 'An-Naazi''aat', 46),
+(80, 'Abasa', 42),
+(81, 'At-Taqwir', 29),
+(82, 'Al Infithar', 19),
+(83, 'Al Muthaffifiin', 36),
+(84, 'Al Insyiqaaq', 25),
+(85, 'Al Buruuj', 22),
+(86, 'Ath Thaariq', 17),
+(87, 'Al A''laa', 19),
+(88, 'Al Ghaasyiyah', 26),
+(89, 'Al Fajr', 30),
+(90, 'Al Balad', 20),
+(91, 'Asy-Syam', 15),
+(92, 'Al Lail', 21),
+(93, 'Adh Dhuhaa', 11),
+(94, 'Al-Insyirah', 8),
+(95, 'At Tiin', 8),
+(96, 'Al ''Alaq', 19),
+(97, 'Al Qadar', 5),
+(98, 'Al Bayyinah', 8),
+(99, 'Al Zalzalah', 8),
+(100, 'Al-''Aadiyaat', 11),
+(101, 'Al Qaari''ah', 11),
+(102, 'At-Takaatsur', 8),
+(103, 'Al ''Ashr', 3),
+(104, 'Al Humazah', 9),
+(105, 'Al Fiil', 5),
+(106, 'Al Quraisy', 4),
+(107, 'Al Maa''un', 7),
+(108, 'Al Kautsar', 3),
+(109, 'Al Kaafirun', 6),
+(110, 'An-Nashr', 3),
+(111, 'Al-Lahab', 5),
+(112, 'Al Ikhlas', 4),
+(113, 'Al Falaq', 5),
+(114, 'An-Naas', 6);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tempat`
+--
+
+CREATE TABLE IF NOT EXISTS `tempat` (
+  `id_tempat` tinyint(2) NOT NULL,
+  `tempat` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tempat`
+--
+
+INSERT INTO `tempat` (`id_tempat`, `tempat`) VALUES
+(1, 'Mekkah'),
+(2, 'Madinah');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `ayat`
+--
+ALTER TABLE `ayat`
+ ADD PRIMARY KEY (`no`);
+
+--
+-- Indexes for table `surat`
+--
+ALTER TABLE `surat`
+ ADD PRIMARY KEY (`id_surat`);
+
+--
+-- Indexes for table `tempat`
+--
+ALTER TABLE `tempat`
+ ADD PRIMARY KEY (`id_tempat`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
