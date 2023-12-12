@@ -36,25 +36,25 @@ if(isset($_POST['submit'])){
 $pilih = $_POST['pilih'];
 
 if ($pilih=="1"){
-    $disp = mysql_query("SELECT s.surat, a.no_ayat, a.bunyi, a.transliterasi, a.arti,
+    $disp = $mysqli->query("SELECT s.surat, a.no_ayat, a.bunyi, a.transliterasi, a.arti,
     a.repetisi, a.juz, s.jml_ayat, t.tempat, a.no_turun FROM ayat a
     INNER JOIN surat s ON a.id_surat = s.id_surat
     INNER JOIN tempat t ON a.id_tempat = t.id_tempat ORDER BY a.transliterasi");
 }
 elseif ($pilih=="2"){
-    $disp = mysql_query("SELECT s.surat, a.no_ayat, a.bunyi, a.transliterasi, a.arti,
+    $disp = $mysqli->query("SELECT s.surat, a.no_ayat, a.bunyi, a.transliterasi, a.arti,
     a.repetisi, a.juz, s.jml_ayat, t.tempat, a.no_turun FROM ayat a
     INNER JOIN surat s ON a.id_surat = s.id_surat
     INNER JOIN tempat t ON a.id_tempat = t.id_tempat ORDER BY a.juz");
 }
 elseif ($pilih=="3"){
-    $disp = mysql_query("SELECT s.surat, a.no_ayat, a.bunyi, a.transliterasi, a.arti,
+    $disp = $mysqli->query("SELECT s.surat, a.no_ayat, a.bunyi, a.transliterasi, a.arti,
     a.repetisi, a.juz, s.jml_ayat, t.tempat, a.no_turun FROM ayat a
     INNER JOIN surat s ON a.id_surat = s.id_surat
     INNER JOIN tempat t ON a.id_tempat = t.id_tempat ORDER BY a.id_surat");
 }
 else {
-    $disp = mysql_query("SELECT s.surat, a.no_ayat, a.bunyi, a.transliterasi, a.arti,
+    $disp = $mysqli->query("SELECT s.surat, a.no_ayat, a.bunyi, a.transliterasi, a.arti,
     a.repetisi, a.juz, s.jml_ayat, t.tempat, a.no_turun FROM ayat a
     INNER JOIN surat s ON a.id_surat = s.id_surat
     INNER JOIN tempat t ON a.id_tempat = t.id_tempat");
@@ -66,7 +66,7 @@ else {
   <th>Jumlah Ayat</th><th>Tempat Turun</th>
 <?php
 $i=1;
-while ($r=mysql_fetch_array($disp)){
+while ($r=$disp->fetch_array()){
 echo "<tr><td>".$i."<td>".$r['surat']."<td>".$r['no_ayat']."</td><td>".
   $r['bunyi']."<br/>".$r['transliterasi']."</td><td>".$r['arti']."</td><td>".
   $r['repetisi']."</td><td>".$r['juz']."</td><td>".$r['jml_ayat']."</td><td>".
